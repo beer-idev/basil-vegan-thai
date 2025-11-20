@@ -1,26 +1,124 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-teal: #008080;
+  --color-orange: #f28c28;
+  --color-gold: #d4af37;
+  --color-cream: #fef7ed;
+  --color-text-dark: #333333;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background: var(--color-cream);
+  --color-foreground: var(--color-text-dark);
+  --color-teal: #008080;
+  --color-orange: #f28c28;
+  --color-gold: #d4af37;
+  --color-cream: #fef7ed;
+  --color-slate-900: #0f172a;
+  --color-slate-800: #1f2937;
+  --color-slate-700: #374151;
+  --color-emerald-50: #ecfdf5;
+  --color-emerald-100: #dcfce7;
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(circle at top left, #fffaf5 0, #fbead6 40%, #f4dec4 100%);
+  color: var(--color-text-dark);
+  font-family: var(--font-body), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+.font-heading {
+  font-family: var(--font-heading), "Playfair Display", ui-serif, Georgia,
+    "Times New Roman", serif;
+}
+
+.font-body {
+  font-family: var(--font-body), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+.bg-cream {
+  background-color: var(--color-cream);
+}
+
+.text-teal {
+  color: var(--color-teal);
+}
+
+.text-orange {
+  color: var(--color-orange);
+}
+
+.border-gold\/40 {
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.bg-cream-pattern {
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.8) 0, transparent 55%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.95) 0, transparent 60%),
+    linear-gradient(135deg, #fff5e8 0%, #f7e4cf 40%, #f2d7b9 100%);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Additional modern styles */
+.text-gold {
+  color: var(--color-gold);
+}
+
+.bg-gold {
+  background-color: var(--color-gold);
+}
+
+.border-gold {
+  border-color: var(--color-gold);
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.scroll-reveal.fade-in {
+  transform: translateY(12px);
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
