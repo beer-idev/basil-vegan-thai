@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import type { ReactNode } from "react";
 
 type IconName = "home" | "deals" | "order" | "book" | "rewards";
 
-const NAV_ICONS: Record<IconName, JSX.Element> = {
+const NAV_ICONS: Record<IconName, ReactNode> = {
   home: (
     <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true">
       <path
@@ -182,4 +183,3 @@ export function MobileBottomNav() {
     </nav>
   );
 }
-
